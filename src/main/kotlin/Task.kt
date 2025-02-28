@@ -1,7 +1,7 @@
 fun main() {
 
-    var totalPrice = 1000.0
-    var regularCustomer = false
+    var totalPrice = 11000.0
+    var regularCustomer = true
 
     val noDiscount = 1000.0
     val discountRubles = 10_000.0
@@ -15,13 +15,13 @@ fun main() {
         }
     } else if (totalPrice > noDiscount && totalPrice <= discountRubles) {
         if (regularCustomer) {
-            "Стоимость покупки - $totalPrice рублей. Так как она больше $noDiscount или равняется $discountRubles и вы наш постоянный клиент, скидка составит " + (100 + (totalPrice * 0.01)) + " рублей. Стоимость покупки с учётом скидки составит: " + (totalPrice - (100 + (totalPrice * 0.01)))
+            "Стоимость покупки - $totalPrice рублей. Так как она больше $noDiscount или равняется $discountRubles и вы наш постоянный клиент, скидка составит " + (100 + ((totalPrice - 100) * 0.01)) + " рублей. Стоимость покупки с учётом скидки составит: " + (totalPrice - 100 - ((totalPrice - 100) * 0.01))
         } else {
             "Стоимость покупки - $totalPrice рублей. Так как она больше $noDiscount или равняется $discountRubles, скидка составит 100 рублей. Стоимость покупки с учётом скидки составит: " + (totalPrice - 100)
         }
     } else {
         if (regularCustomer) {
-            "Стоимость покупки - $totalPrice рублей. Так как она больше или равна $discountPrices и вы постоянный клиент, применится скидка 6%. Стоимость покупки с учётом скидки составит: " + (totalPrice - (totalPrice * 0.06))
+            "Стоимость покупки - $totalPrice рублей. Так как она больше или равна $discountPrices и вы постоянный клиент, применится скидка 6%. Стоимость покупки с учётом скидки составит: " + (totalPrice - (totalPrice * 0.05) - (totalPrice - (totalPrice * 0.05)) * 0.01)
         } else {
             "Стоимость покупки - $totalPrice рублей. Так как она больше или равна $discountPrices, применится скидка 5%. Стоимость покупки с учётом скидки составит: " + (totalPrice - (totalPrice * 0.05))
         }
