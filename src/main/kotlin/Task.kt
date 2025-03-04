@@ -26,6 +26,5 @@ fun main() {
             "Стоимость покупки - $totalPrice рублей. Так как она больше или равна $discountPrices, применится скидка 5%. Стоимость покупки с учётом скидки составит: " + (totalPrice - (totalPrice * 0.05))
         }
     }
-
     println(result)
 }
